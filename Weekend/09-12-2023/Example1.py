@@ -1,0 +1,6 @@
+age=int(input("Eneter age"))
+if(age >=1 and age <= 5) : print("Child")
+elif(age >=6 and age <= 17) : print("Teener")
+elif(age >=18 and age <= 21) : print("Adult")
+elif(age >=22 and age <= 60) : print("Older")
+else : print("Invalid Input")
