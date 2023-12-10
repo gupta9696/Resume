@@ -3,17 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download File</title>
+    <title>Download Files</title>
 </head>
 <body>
 
-    <h1>Download File from Documents</h1>
+    <h1>Download Files from Documents</h1>
 
-    <p>Click the link below to download the file:</p>
+    <ul id="fileList">
+        <!-- File links will be added here dynamically -->
+    </ul>
 
-    <a href="C:\Users\003GM1744\Desktop\Git\Resume\Weekend">
-        Download File
-    </a>
+    <script>
+        // Replace 'your-folder' with the actual folder name
+        const folderPath = 'documents/your-folder/';
+
+        // Replace 'your-file1.txt', 'your-file2.txt', etc. with your actual file names
+        const fileNames = ['your-file1.txt', 'your-file2.txt', 'your-file3.txt'];
+
+        // Get the ul element where we'll add the file links
+        const fileList = document.getElementById('fileList');
+
+        // Loop through each file name and create a link for it
+        fileNames.forEach(fileName => {
+            const filePath = folderPath + fileName;
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = filePath;
+            link.download = fileName;
+            link.textContent = fileName;
+            listItem.appendChild(link);
+            fileList.appendChild(listItem);
+        });
+    </script>
 
 </body>
 </html>
